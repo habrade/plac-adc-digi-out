@@ -62,6 +62,8 @@ begin
     -- calc_out = X"1A8C"
     t1 <= 14X"0FFF";   -- "1100"
     wait for SYS_PERIOD;
+    -- calc_out = X"128C"
+    t1 <= 14X"00FF";   -- "1000"
     t2 <= 6X"1F";      --  "101"
     wait for SYS_PERIOD;
     t3 <= 6X"0F";      --  "100"
@@ -70,29 +72,6 @@ begin
     wait for SYS_PERIOD;
     t5 <= 15X"0FFF";   --  "1100"
     wait for 1*SYS_PERIOD;
-    
-    -- calc_out = X"14a8"
-    t1 <= 14X"003ff";  -- "1100"
-    wait for SYS_PERIOD;
-    t2 <= 6X"01";      --  "001" 
-    wait for SYS_PERIOD;
-    t3 <= 6X"00";      --  "000"
-    wait for SYS_PERIOD;
-    t4 <= 6X"0F";      --  "100"
-    wait for SYS_PERIOD;
-    t5 <= 15X"00FF";   -- "1000"
-    wait for 1*SYS_PERIOD;
-    
-    -- calc_out = X"0a35"
-    t1 <= 14X"000F";   -- "0100"
-    wait for SYS_PERIOD;
-    t2 <= 6X"0F";      --  "100"
-    wait for SYS_PERIOD;
-    t3 <= 6X"01";      --  "001"
-    wait for SYS_PERIOD;
-    t4 <= 6X"03";      --  "010"
-    wait for SYS_PERIOD;
-    t5 <= 15X"001F";   -- "0101"
 
     wait for 1000 ns;
     std.env.stop;
