@@ -34,8 +34,8 @@ begin
         dout_r <= "101";
       when others => null;
     end case;
-    
-    dout <= dout_r;
   end process;
+
+  dout <= dout_r;
 
 end architecture;

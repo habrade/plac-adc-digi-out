@@ -50,10 +50,9 @@ begin
       when 14X"3fff" =>
         dout_r <= "1110";
       when others => null;
-
     end case;
-    dout <= dout_r;
   end process;
-
+  
+  dout <= dout_r;
 
 end architecture;

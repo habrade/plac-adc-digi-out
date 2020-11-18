@@ -52,8 +52,8 @@ begin
         dout_r <= "1111";
       when others => null;
     end case;
-    dout <= dout_r;
-
   end process;
+
+  dout <= dout_r;
 
 end architecture;
