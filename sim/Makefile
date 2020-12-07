@@ -4,7 +4,7 @@ XILINX_LIB_PATH=/opt/Questasim/10.7c/xilinx_lib_2019.2
 UVVM_UTIL_DIR=/opt/UVVM/UVVM/uvvm_util/sim/uvvm_util
 
 
-sim_vhdl_or_verilog=0
+sim_vhdl_or_verilog=1
 ifeq ($(sim_vhdl_or_verilog), 0)
 	FIRMWARE_SRC_DIR=../src
 	comp_tool=vcom
@@ -18,9 +18,6 @@ else
 	comp_tool=vlog
 	VSTD=-93
 	SRCS=\
-		${FIRMWARE_SRC_DIR}/comp6.v \
-		${FIRMWARE_SRC_DIR}/comp14.v \
-		${FIRMWARE_SRC_DIR}/comp15.v \
 		${FIRMWARE_SRC_DIR}/test.v
 endif
 	

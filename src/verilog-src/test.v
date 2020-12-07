@@ -158,3 +158,102 @@ begin
 end
 
 endmodule
+
+
+module comp6 (
+    din,
+    dout
+);
+
+input [5:0] din;
+output [2:0] dout;
+
+(* ram_style = "block" *) reg [2:0] dout_r;
+
+always @ (din)
+begin
+    case (din)
+        6'b00_0000 : dout_r = 3'h0;
+        6'b00_0001 : dout_r = 3'h1;
+        6'b00_0011 : dout_r = 3'h2;
+        6'b00_0111 : dout_r = 3'h3;
+        6'b00_1111 : dout_r = 3'h4;
+        6'b01_1111 : dout_r = 3'h5;
+        default    : dout_r = 3'h5;
+    endcase  
+end
+
+assign dout = dout_r;
+
+endmodule
+
+module comp14 (
+    din,
+    dout
+);
+
+input [13:0] din;
+output [3:0] dout;
+
+(* ram_style = "block" *) reg [3:0] dout_r;
+
+always @ (din)
+begin
+    case (din)
+        14'b00_0000_0000_0000: dout_r = 4'h0;
+        14'b00_0000_0000_0001: dout_r = 4'h1;
+        14'b00_0000_0000_0011: dout_r = 4'h2;
+        14'b00_0000_0000_0111: dout_r = 4'h3;
+        14'b00_0000_0000_1111: dout_r = 4'h4;
+        14'b00_0000_0001_1111: dout_r = 4'h5;
+        14'b00_0000_0011_1111: dout_r = 4'h6;
+        14'b00_0000_0111_1111: dout_r = 4'h7;
+        14'b00_0000_1111_1111: dout_r = 4'h8;
+        14'b00_0001_1111_1111: dout_r = 4'h9;
+        14'b00_0011_1111_1111: dout_r = 4'ha;
+        14'b00_0111_1111_1111: dout_r = 4'hb;
+        14'b00_1111_1111_1111: dout_r = 4'hc;
+        14'b01_1111_1111_1111: dout_r = 4'hd;
+        default              : dout_r = 4'hd;
+    endcase  
+end
+
+assign dout = dout_r;
+
+endmodule
+
+module comp15 (
+    din,
+    dout
+);
+
+input [14:0] din;
+output [3:0] dout;
+
+(* ram_style = "block" *) reg [3:0] dout_r;
+
+always @ (din)
+begin
+    case (din)
+        15'b000_0000_0000_0000: dout_r = 4'h0;
+        15'b000_0000_0000_0001: dout_r = 4'h1;
+        15'b000_0000_0000_0011: dout_r = 4'h2;
+        15'b000_0000_0000_0111: dout_r = 4'h3;
+        15'b000_0000_0000_1111: dout_r = 4'h4;
+        15'b000_0000_0001_1111: dout_r = 4'h5;
+        15'b000_0000_0011_1111: dout_r = 4'h6;
+        15'b000_0000_0111_1111: dout_r = 4'h7;
+        15'b000_0000_1111_1111: dout_r = 4'h8;
+        15'b000_0001_1111_1111: dout_r = 4'h9;
+        15'b000_0011_1111_1111: dout_r = 4'ha;
+        15'b000_0111_1111_1111: dout_r = 4'hb;
+        15'b000_1111_1111_1111: dout_r = 4'hc;
+        15'b001_1111_1111_1111: dout_r = 4'hd;
+        15'b011_1111_1111_1111: dout_r = 4'he;
+        default               : dout_r = 4'he;
+    endcase  
+end
+
+assign dout = dout_r;
+
+endmodule
