@@ -43,8 +43,8 @@ wire [2:0] t3_v_0;
 wire [2:0] t4_v_0;
 wire [3:0] t5_v_0;
 
-assign #0.3 clk_p1_delay = clk_p1;
-assign #1.2 clk_p2_delay = clk_p2;
+assign #7.0 clk_p1_delay = clk_p1;
+assign #7.0 clk_p2_delay = clk_p2;
 
 comp14 gen_t1_in (
     .din(t1),
