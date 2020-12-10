@@ -1,3 +1,5 @@
+`timescale 1ns/100ps
+
 module  test(
     clk,
     clk_p1,
@@ -26,6 +28,9 @@ input  [14:0] t5;
 
 output reg [12:0] calc_out;
 
+wire clk_p1_delay;
+wire clk_p2_delay;
+
 reg [3:0] t1_v [5:0];
 reg [2:0] t2_v [4:0];
 reg [2:0] t3_v [3:0];
@@ -37,6 +42,9 @@ wire [2:0] t2_v_0;
 wire [2:0] t3_v_0;
 wire [2:0] t4_v_0;
 wire [3:0] t5_v_0;
+
+assign #0.3 clk_p1_delay = clk_p1;
+assign #1.2 clk_p2_delay = clk_p2;
 
 comp14 gen_t1_in (
     .din(t1),
@@ -75,7 +83,7 @@ end
 
 integer i;
 
-always @(posedge clk_p1)
+always @(posedge clk_p1_delay)
 begin
     if (rst == 1) begin
         for (i=1; i<=5; i=i+1) begin
@@ -89,7 +97,7 @@ begin
     end  
 end
 
-always @(posedge clk_p2)
+always @(posedge clk_p2_delay)
 begin
     if (rst == 1) begin
         for (i=1; i<=4; i=i+1) begin
@@ -103,7 +111,7 @@ begin
     end  
 end
 
-always @(posedge clk_p1)
+always @(posedge clk_p1_delay)
 begin
     if (rst == 1) begin
         for (i=1; i<=3; i=i+1) begin
@@ -118,7 +126,7 @@ begin
 end
 
 
-always @(posedge clk_p2)
+always @(posedge clk_p2_delay)
 begin
     if (rst == 1) begin
         for (i=1; i<=2; i=i+1) begin
@@ -132,7 +140,7 @@ begin
     end  
 end
 
-always @(posedge clk_p1)
+always @(posedge clk_p1_delay)
 begin
     if (rst == 1)
         t5_v[1] <= 4'h0;

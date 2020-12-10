@@ -29,8 +29,8 @@ architecture behv of tb_test is
 
   constant SYS_PERIOD : time := 25 ns;  -- 40MHz
 
-  constant delta_1 : time := 0.3 ns;
-  constant delta_2 : time := 1.2 ns;
+  constant delta_1 : time := 0.0 ns;
+  constant delta_2 : time := 0.0 ns;
 
 begin
 
@@ -60,17 +60,17 @@ begin
     wait for 5*SYS_PERIOD;
 
     -- calc_out = X"1A8C"
-    t1 <= 14X"0FFF";   -- "1100"
+    t1 <= 14X"003F";   -- "1000"
     wait for SYS_PERIOD;
     -- calc_out = X"128C"
-    t1 <= 14X"00FF";   -- "1000"
-    t2 <= 6X"1F";      --  "101"
+    -- t1 <= 14X"003F";   -- "1000"
+    t2 <= 6X"03";      --  "101"
     wait for SYS_PERIOD;
     t3 <= 6X"0F";      --  "100"
     wait for SYS_PERIOD;
-    t4 <= 6X"01";      --  "001"
+    t4 <= 6X"03";      --  "001"
     wait for SYS_PERIOD;
-    t5 <= 15X"0FFF";   --  "1100"
+    t5 <= 15X"01FF";   --  "1100"
     wait for 1*SYS_PERIOD;
 
     wait for 1000 ns;
