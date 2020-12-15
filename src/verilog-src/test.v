@@ -83,7 +83,7 @@ end
 
 integer i;
 
-always @(posedge clk_p1_delay)
+always @(posedge clk_p1_delay or negedge clk_p1_delay)
 begin
     if (rst == 1) begin
         for (i=1; i<=5; i=i+1) begin
@@ -97,7 +97,7 @@ begin
     end  
 end
 
-always @(posedge clk_p2_delay)
+always @(posedge clk_p2_delay or negedge clk_p2_delay)
 begin
     if (rst == 1) begin
         for (i=1; i<=4; i=i+1) begin
@@ -111,7 +111,7 @@ begin
     end  
 end
 
-always @(posedge clk_p1_delay)
+always @(posedge clk_p1_delay or negedge clk_p1_delay)
 begin
     if (rst == 1) begin
         for (i=1; i<=3; i=i+1) begin
@@ -126,7 +126,7 @@ begin
 end
 
 
-always @(posedge clk_p2_delay)
+always @(posedge clk_p2_delay or negedge clk_p2_delay)
 begin
     if (rst == 1) begin
         for (i=1; i<=2; i=i+1) begin
@@ -140,7 +140,7 @@ begin
     end  
 end
 
-always @(posedge clk_p1_delay)
+always @(posedge clk_p1_delay or negedge clk_p1_delay)
 begin
     if (rst == 1)
         t5_v[1] <= 4'h0;
